@@ -1,7 +1,12 @@
 import React from 'react'
 
-function App() {
-  return <h1>Projeto vazio</h1>
-}
+import GlobalStyle from './styles/global'
+
+const App: React.FC = () => (
+  <>
+    <h1>Projeto Iniciando</h1>
+    <GlobalStyle />
+  </>
+)
 
 export default App
