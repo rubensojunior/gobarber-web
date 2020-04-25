@@ -15,8 +15,11 @@ import { Container, Content, Background } from './styles'
 const SignUp: React.FC = () => {
   const formRef = useRef<FormHandles>(null)
 
-  const handleSubmit = useCallback(async (data: Record<string, any>) => {
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  const handleSubmit = useCallback(async (data: Object) => {
     try {
+      formRef.current?.setErrors({})
+
       const schema = Yup.object().shape({
         name: Yup.string().min(6, 'Nome deve ter no mínimo 6 dígitos'),
         email: Yup.string()
